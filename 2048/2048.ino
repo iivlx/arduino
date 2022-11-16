@@ -38,14 +38,12 @@ void setup() {
     Serial.begin(9600);
     Serial.println("Setup finished");
   }
+  
+  draw();
 }
 
 void loop(void) {
-  bool moved = false;
-  draw();
-
-  moved = checkUpdate();
-  if (moved == true) {
+  if (checkUpdate()) {
     draw();
     delay(70);
     addSquare();
